@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eczar&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">My Library</div>
+    <div class="newbook-cont">
+        <button class="addbook" onclick="openForm()">+ Add New Book</button>
+        <div class="form-popup" id="myForm">
+            <form action="example.com/path" class = "form-container" method="post">
+                <label for="title">Title:</label>
+                <input type="text" id="title">
+
+                <label for="author">Author:</label>
+                <input type="text" id="author">
+
+                <label for="pages">Number of Pages:</label>
+                <input type="text" id="pages">
+
+                <label class = "read-switch">
+                    <input type = "checkbox">
+                    <span class = "slider"></span>
+                </label>
+
+                <button type="submit" class="submit-btn">Submit</button>
+
+            </form>
+        </div>
+    </div>
+    <div class="bookcards-cont">
+    </div>
+    
+</body>
+</html>

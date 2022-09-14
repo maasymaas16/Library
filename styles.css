@@ -1,0 +1,99 @@
+:root {
+    --headercolor: #f5f9ee;
+}
+
+* {
+    font-family: 'Eczar', serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: var(--headercolor)
+}
+
+.header {
+    display: flex;
+    height: 3em;
+    width: 100%;
+    align-items:  center;
+    justify-content: center;
+    font-size: 2em;
+    box-shadow: 0 4px 2px -2px rgb(0,0,0,0.5);
+    background: #eef2e2;
+    border-radius: 8px;
+}
+
+.newbook-cont {
+    display: flex;
+    margin: 2em;
+    align-items: center;
+    justify-content: center;
+}
+
+.addbook {
+    padding: .5em;
+    border: solid 4px #247291;
+    background-color: #f8da5b;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 400;
+    transition: 0.5s;
+}
+
+.bookcard {
+    border: solid 4px rgb(0,0,0,0.5);
+    border-radius: 1em;
+    padding: 1em;
+    background: var(--headercolor);
+}
+
+.bookcards-cont {
+    display: grid;
+    grid-template: 250px / 1fr 1fr 1fr ;
+}
+
+.addbook:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+
+  /* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+    display: block;
+    top: 10em;
+    left: 50%;
+  }
+  
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
