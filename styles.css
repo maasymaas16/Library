@@ -1,5 +1,7 @@
 :root {
     --headercolor: #eef2e2;
+    --button: #f8da5b;
+    --buttonborder: #247291;
 }
 
 * {
@@ -36,8 +38,8 @@ html, body {
 
 .addbook {
     padding: .5em;
-    border: solid 4px #247291;
-    background-color: #f8da5b;
+    border: solid 3px var(--buttonborder);
+    background-color: var(--button);
     border-radius: 8px;
     font-size: 1.1em;
     font-weight: 400;
@@ -69,12 +71,14 @@ html, body {
   
   /* Add styles to the form container */
   .form-container {
-    max-width: 28vw;
+    max-width: 250px;
     padding: 10px;
     background-color: var(--headercolor);
     position: absolute;
     top: 20em;
-    left: 36vw;
+    left: 0;
+    right: 0;
+    margin: auto;
     border: solid 3px black;
     border-radius: 8px;
   }
@@ -86,6 +90,8 @@ html, body {
     padding: 6px;
     margin: 5px 0 22px 0;
     background: #f1f1f1;
+    border:solid 2px black;
+    border-radius: .5em;
   }
   
   /* When the inputs get focus, do something */
@@ -95,7 +101,24 @@ html, body {
   }
 
   .submit-btn {
-    
+    background-color: var(--button);
+    font-size: 1.5em;
+    border: solid 3px var(--buttonborder);
+    border-radius: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 90%;
+    margin-top: 1em;
+  }
+
+  .submit-btn:hover {
+    background-color: rgb(206, 177, 50)
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
 

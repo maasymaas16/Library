@@ -16,7 +16,7 @@
     <div class="newbook-cont">
         <button class="addbook" onclick="openForm()">+ Add New Book</button>
         <div class="form-popup" id="myForm">
-            <form action="example.com/path" class = "form-container" method="post">
+            <form class = "form-container" method="post">
                 <label for="title">Title:</label>
                 <input type="text" id="title">
 
@@ -26,12 +26,12 @@
                 <label for="pages">Number of Pages:</label>
                 <input type="text" id="pages">
 
-                <button type="submit" class="submit-btn">Submit</button>
-
-                <label class = "read-switch">
+                <label class = "read-switch"> Have you read?
                     <input type = "checkbox">
                     <span class = "slider"></span>
                 </label>
+
+                <button type="submit" class="submit-btn" onclick="closeForm()">Submit</button>
 
 
             </form>
