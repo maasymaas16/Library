@@ -30,15 +30,24 @@ function updateLibrary () {
   myLibrary.forEach(book => {
     const div = document.createElement('div');
     div.classList.add('bookcard');
+
     const btitle = document.createElement('div');
     const bauthor = document.createElement('div');
     const bpages = document.createElement('div');
+
     btitle.innerHTML = book.title;
     bauthor.innerHTML = book.author;
     bpages.innerHTML = book.pages;
+
     div.appendChild(btitle);
     div.appendChild(bauthor);
     div.appendChild(bpages);
+
+    const remove = document.createElement('button');
+    remove.classList.add("remove-btn");
+    remove.innerHTML = "Remove";
+    div.appendChild(remove);
+
     const bookcards = document.querySelector('.bookcards-cont');
     bookcards.appendChild(div);
   })
