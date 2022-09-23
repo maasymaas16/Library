@@ -17,6 +17,8 @@
         <button class="addbook" onclick="openForm()">+ Add New Book</button>
         <div class="form-popup" id="myForm">
             <form class="form-container" id = "newBook">
+                <button type="button" id="close-button" onclick="exitForm()">x</button>
+
                 <label for="title">Title:</label>
                 <input type="text" id="title">
 
@@ -26,9 +28,10 @@
                 <label for="pages">Number of Pages:</label>
                 <input type="text" id="pages">
 
-                <label class = "read-switch"> Have you read?</label>
-                <input type = "checkbox" class="checkBox">
-
+                <div class="readbtn-cont">
+                    <label for="read-button">Read?</label>
+                    <input type="checkbox" name="checkbox" id="read-check">
+                </div>
                 <button type="button" class="submit-btn" onclick="closeForm()">Submit</button>
             </form>
         </div>
@@ -36,7 +39,6 @@
     <div class="bookcards-cont">
 
     </div>
-    <!-- <div class="overlay" id="overlay"></div> -->
     
 </body>
 </html>
