@@ -23,11 +23,11 @@ const getBookFromInput = () =>  {
     const author = document.getElementById('author').value;
     const pages = document.getElementById('pages').value;
     const read = document.getElementById('read-check').checked;
-    console.log(read);
     return new Book(title, author, pages, true);
 } 
 
 function updateLibrary () {
+  let i = 0;
   myLibrary.forEach(book => {
     const div = document.createElement('div');
     div.classList.add('bookcard');
@@ -51,13 +51,16 @@ function updateLibrary () {
 
     const remove = document.createElement('button');
     remove.classList.add("remove-btn");
+    remove.setAttribute("value", i)
+    remove.setAttribute('id', 'remove-btn');
 
     const readbtn = document.createElement('button');
+    readbtn.classList.add('read-btn');
+    readbtn.setAttribute('id','readbtn');
+    readbtn.setAttribute('value', i)
     if (read){
-      readbtn.classList.add('read-btn');
       readbtn.innerHTML = 'Read';
     } else {
-      readbtn.classList.add('notread-btn');
       readbtn.innerHTML = 'Not Read';
     }
 
@@ -68,6 +71,8 @@ function updateLibrary () {
 
     const bookcards = document.querySelector('.bookcards-cont');
     bookcards.appendChild(div);
+    i++;
+    console.log(remove.value);
   })
 };
 
@@ -87,9 +92,33 @@ function clearCards () {
   document.querySelector(".bookcards-cont").innerHTML = "";
 }
 
-function removeBook (book) {
-
+function removeBook (value) {
+  myLibrary.splice(value);
+  updateLibrary();
 }
+
+document.addEventListener('click', function(e){
+  if(e.target && e.target.id=='remove-btn'){
+    myLibrary.splice(e.target.value,1)
+    clearCards();
+    updateLibrary();
+  }
+});
+
+document.addEventListener('click', function(e){
+  if(e.target && e.target.id=='readbtn'){
+    if(e.target.innerHTML === 'Read'){
+      e.target.innerHTML = 'Not Read';
+    } else {
+      e.target.innerHTML = 'Read';
+    }
+  }
+})
+
+
+
+
+
 
 
 

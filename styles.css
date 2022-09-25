@@ -77,7 +77,7 @@ html, body {
 }
 
 .remove-btn {
-  border: solid rgb(233, 118, 105) 2px;
+  border: solid black 2px;
   border-radius: 14px;
   padding-top: .2em;
   padding-bottom: .2em;
@@ -87,22 +87,34 @@ html, body {
   margin-top: .5em ;
 }
 
-.remove-btn:hover, .read-btn:hover {
-  border: solid 2px black;
-  transform: scale(1.05);
+.remove-btn:hover, .read-btn:hover, .notread-btn:hover {
+  transform: scale(1.08);
   transition: 0.5s;
 }
 
 .read-btn {
-  border: solid rgb(121, 212, 152) 2px;
+  border: solid var(--buttonborder);
   border-radius: 14px;
   padding-top: .2em;
   padding-bottom: .2em;
-  background-color: rgb(121, 212, 152);
+  background-color: var(--button);
   width: 50%;
   font-size: .85em;
   margin-top: .5em ;
 }
+
+.notread-btn {
+  border: solid var(--button);
+  border-radius: 14px;
+  padding-top: .2em;
+  padding-bottom: .2em;
+  background-color: var(--buttonborder);
+  color: white;
+  width: 50%;
+  font-size: .85em;
+  margin-top: .5em ;
+}
+
 
 .buttonrow {
   display: flex;
