@@ -87,7 +87,7 @@ html, body {
   margin-top: .5em ;
 }
 
-.remove-btn:hover, .read-btn:hover, .notread-btn:hover {
+.remove-btn:hover, .read-btn:hover{
   transform: scale(1.08);
   transition: 0.5s;
 }
@@ -102,19 +102,6 @@ html, body {
   font-size: .85em;
   margin-top: .5em ;
 }
-
-.notread-btn {
-  border: solid var(--button);
-  border-radius: 14px;
-  padding-top: .2em;
-  padding-bottom: .2em;
-  background-color: var(--buttonborder);
-  color: white;
-  width: 50%;
-  font-size: .85em;
-  margin-top: .5em ;
-}
-
 
 .buttonrow {
   display: flex;

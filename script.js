@@ -8,24 +8,27 @@ function Book(title, author, pages, read){
     this.read = read;
 
 }
-
+// Function that adds a new book to myLibrary array
 function addBookToLibrary() {
   myLibrary.push(getBookFromInput());
 }
 
+// Function that opens the form to add a new book
 function openForm() {
     document.getElementById("myForm").style.display = "block";
 
   }
 
+// Function that gets the book attributes from the submitted form
 const getBookFromInput = () =>  {
     const title = document.getElementById('title').value;
     const author = document.getElementById('author').value;
     const pages = document.getElementById('pages').value;
     const read = document.getElementById('read-check').checked;
-    return new Book(title, author, pages, true);
+    return new Book(title, author, pages, read);
 } 
 
+// Function that creates a card for each book in the Library and displays them on the page
 function updateLibrary () {
   let i = 0;
   myLibrary.forEach(book => {
@@ -47,7 +50,7 @@ function updateLibrary () {
     div.appendChild(bauthor);
     div.appendChild(bpages);
 
-    const read = document.getElementById('read-check').checked;
+    const read = book.read;
 
     const remove = document.createElement('button');
     remove.classList.add("remove-btn");
@@ -57,7 +60,6 @@ function updateLibrary () {
     const readbtn = document.createElement('button');
     readbtn.classList.add('read-btn');
     readbtn.setAttribute('id','readbtn');
-    readbtn.setAttribute('value', i)
     if (read){
       readbtn.innerHTML = 'Read';
     } else {
@@ -76,6 +78,7 @@ function updateLibrary () {
   })
 };
 
+// Function that closes the new book form, and updates the page with the new book card
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
   clearCards();
@@ -84,19 +87,23 @@ function closeForm() {
 
 }
 
+// Function to close the open form without having to submit anything
 function exitForm () {
   document.getElementById("myForm").style.display = "none";
 }
 
+// Function to clear the page before updating book cards
 function clearCards () {
   document.querySelector(".bookcards-cont").innerHTML = "";
 }
 
+// Function to remove specific book from Library when button is pressed
 function removeBook (value) {
   myLibrary.splice(value);
   updateLibrary();
 }
 
+// Event listener for removing book button
 document.addEventListener('click', function(e){
   if(e.target && e.target.id=='remove-btn'){
     myLibrary.splice(e.target.value,1)
@@ -105,6 +112,7 @@ document.addEventListener('click', function(e){
   }
 });
 
+// Event listener for toggle read/not read on individual book cards
 document.addEventListener('click', function(e){
   if(e.target && e.target.id=='readbtn'){
     if(e.target.innerHTML === 'Read'){
